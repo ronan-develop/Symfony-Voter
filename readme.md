@@ -21,8 +21,10 @@ Ce contrat implique l'utilisation des méthodes [supports](#supports) et [voteOn
 Elles seront détaillées ci-après.
 
 ## Controller
-Dans la partie controller, pour le traitement de la requête, oin doit vérifier l'accès avec la méthode 
-`$this->denyAccessUnlessGranted('une-règle', 'instance-a-controller');`
+Dans la partie controller, pour le traitement de la requête, oin doit vérifier l'accès avec la méthode :
+```php
+$this->denyAccessUnlessGranted('une-règle', 'instance-a-controller');
+```
 
 Imaginons un blog pour lequel on veut controller l'accès aux post :
 ```php
