@@ -23,7 +23,7 @@ Elles seront détaillées ci-après.
 ## Controller
 Dans la partie controller, pour le traitement de la requête, on doit vérifier l'accès avec la méthode :
 ```php
-$this->denyAccessUnlessGranted('une-règle', 'instance-a-controller', 'Accès refusé.');
+$this->denyAccessUnlessGranted('une-règle', 'instance-a-controller', 'message-de-refus-optionnel.');
 ```
 
 Imaginons un blog pour lequel on veut controller l'accès aux post :
