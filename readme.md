@@ -150,7 +150,7 @@ private function uneMethode(){
 // placer ici de la logique return true or false
 }
 
-private function private function uneMethode(){
+private function uneMethode(){
 // placer ici de la logique return true or false
 }
 ```
