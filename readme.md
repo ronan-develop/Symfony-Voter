@@ -45,7 +45,7 @@ class PostController extends AbstractController
 }
 ```
 `denyAccessUnlessGranted` provient de [l'AbstractController](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Bundle/FrameworkBundle/Controller/AbstractController.php).  
-<u>Le premier</u> paramètre de cette méthode et le nom de la règle à suivre, que l'on retrouvera sous
+<u>Le premier</u> paramètre de cette méthode est le nom de la règle à suivre, que l'on retrouvera sous
 la forme `$attibute` dans le voter.
 
 <u>Le deuxième</u> paramètre est l'instance de l'entité pour laquelle on veut controller l'accès.
@@ -132,6 +132,10 @@ est appelée, cette méthode exécute également notre `voteOnAttribute(string $
 grâce à la `TokenInterface`:
 ```php
 $user = $token->getUser();
+
+if (!$user instanceof UserInterface) {
+    return false;
+}
 ```
 soit bien une instance `UserInterface`.
 Le switch ou match qui suit va déterminer les cas possibles pour le $attribute passé.
