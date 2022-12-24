@@ -21,9 +21,9 @@ Ce contrat implique l'utilisation des méthodes [supports](#supports) et [voteOn
 Elles seront détaillées ci-après.
 
 ## Controller
-Dans la partie controller, pour le traitement de la requête, oin doit vérifier l'accès avec la méthode :
+Dans la partie controller, pour le traitement de la requête, on doit vérifier l'accès avec la méthode :
 ```php
-$this->denyAccessUnlessGranted('une-règle', 'instance-a-controller');
+$this->denyAccessUnlessGranted('une-règle', 'instance-a-controller', 'Accès refusé.');
 ```
 
 Imaginons un blog pour lequel on veut controller l'accès aux post :
@@ -44,7 +44,7 @@ class PostController extends AbstractController
     ...
 }
 ```
-`denyAccessUnlessGranted` provient de l'AbstractController.  
+`denyAccessUnlessGranted` provient de [l'AbstractController](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Bundle/FrameworkBundle/Controller/AbstractController.php).  
 <u>Le premier</u> paramètre de cette méthode et le nom de la règle à suivre, que l'on retrouvera sous
 la forme `$attibute` dans le voter.
 
