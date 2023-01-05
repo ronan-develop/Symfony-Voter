@@ -151,12 +151,23 @@ switch ($attribute) {
         $this->uneAutreMethode()
 }
 return false;
+// exemple
+private function deleteTask(UserInterface $user, mixed $subject): bool
+{
+    if ($user == $subject->getUser()) {
+        return true;
+    }
+    if ($this->security->isGranted("ROLE_ADMIN") && $subject->getUser() == null) {
+        return true;
+    }
+    return false;
+}
 
 private function uneMethode(){
 // placer ici de la logique return true or false
 }
 
-private function uneMethode(){
+private function uneAutreMethode(){
 // placer ici de la logique return true or false
 }
 ```
